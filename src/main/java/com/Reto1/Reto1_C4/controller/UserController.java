@@ -6,6 +6,7 @@ package com.Reto1.Reto1_C4.controller;
 
 import com.Reto1.Reto1_C4.entity.User;
 import com.Reto1.Reto1_C4.service.UserService;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 @RequestMapping("/api/user")
-public class UserController {
+public class UserController implements Serializable{
 
     @Autowired
     private UserService service;

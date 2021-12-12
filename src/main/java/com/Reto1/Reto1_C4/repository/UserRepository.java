@@ -6,6 +6,7 @@ package com.Reto1.Reto1_C4.repository;
 
 import com.Reto1.Reto1_C4.crudRepository.UserCrudRepository;
 import com.Reto1.Reto1_C4.entity.User;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Repository;
  * @author eduardsuarez21
  */
 @Repository
-public class UserRepository {
+public class UserRepository implements Serializable{
 
     @Autowired
     private UserCrudRepository crudRepository;
