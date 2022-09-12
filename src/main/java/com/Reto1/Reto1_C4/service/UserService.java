@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
  * @author eduardsuarez21
  */
 @Service
-public class UserService implements Serializable{
+public class UserService implements Serializable {
 
     @Autowired
     private UserRepository repository;

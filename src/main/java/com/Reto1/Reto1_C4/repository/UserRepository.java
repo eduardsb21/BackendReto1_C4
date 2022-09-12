@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
  * @author eduardsuarez21
  */
 @Repository
-public class UserRepository implements Serializable{
+public class UserRepository implements Serializable {
 
     @Autowired
     private UserCrudRepository crudRepository;
@@ -25,21 +25,22 @@ public class UserRepository implements Serializable{
     public List<User> getUSers() {
         return (List<User>) crudRepository.findAll();
     }
-    public Optional<User> getUserId(int id){
+
+    public Optional<User> getUserId(int id) {
         return crudRepository.findById(id);
     }
-    
-    public User saveUSer(User user){
+
+    public User saveUSer(User user) {
         return crudRepository.save(user);
-        
+
     }
-    
-    public Boolean existeEmail(String email){
+
+    public Boolean existeEmail(String email) {
         Optional<User> usuario = crudRepository.findByEmail(email);
         return !usuario.isEmpty();
     }
-    
-    public Optional<User> autenticarUSuario(String email, String password){
+
+    public Optional<User> autenticarUSuario(String email, String password) {
         return crudRepository.findByEmailAndPassword(email, password);
     }
 }

@@ -8,7 +8,6 @@ import com.Reto1.Reto1_C4.entity.User;
 import com.Reto1.Reto1_C4.service.UserService;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -27,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 @RequestMapping("/api/user")
-public class UserController implements Serializable{
+public class UserController implements Serializable {
 
     @Autowired
     private UserService service;
@@ -37,20 +36,19 @@ public class UserController implements Serializable{
         return service.getUsers();
     }
 
-
     @PostMapping("/new")
     public ResponseEntity saveUser(@RequestBody User user) {
         service.saveUser(user);
         return ResponseEntity.status(201).build();
     }
-    
+
     @GetMapping("/{email}/{password}")
-    public User autenticarUsuario(@PathVariable("email") String email, @PathVariable("password") String password){
+    public User autenticarUsuario(@PathVariable("email") String email, @PathVariable("password") String password) {
         return service.autenticarUsuario(email, password);
     }
-    
+
     @GetMapping("/{email}")
-    public boolean existeEmail(@PathVariable("email") String email){
+    public boolean existeEmail(@PathVariable("email") String email) {
         return service.existeEmail(email);
     }
 
