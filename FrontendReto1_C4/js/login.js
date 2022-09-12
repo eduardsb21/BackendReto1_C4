@@ -15,7 +15,7 @@ function login(){
 
     $.ajax({
         //url del servicio
-        url: "http://localhost:8083/api/user/"+ email + "/" + password,
+        url: "http://152.67.54.209:8084/api/user/"+ email + "/" + password,
         //tipo de peticion
         type: 'GET',
         //tipo de contenido
